@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Cart - Fresh Vegetable Store</title>
+
+    <style>
+         body {
+            margin: 0;
+            font-family: Arial;
+            background-color: #f4fff0;
+        }
+
+        header {
+            background-color: green;
+            color: white;
+            padding: 30px;
+        }
+       .brand{
+           margin:0;
+           padding:0;
+           text-align:left;
+          }
+         .brand h1{
+            margin:0;
+            font-size:28px;
+            line-height:1.1;
+            white-space:nowrap;
+        }
+         .brand h1 span{
+           color:#fff176;
+           }
+         .brand p{
+           font-size:15px;
+           margin:4px 0 0;
+           text-align:left;
+           padding-left:80px;
+           width:100%;
+          }
+
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-left: 30px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+             
+         }
+
+        header p {
+            text-align: left;
+            padding-left: 180px;
+        }
+
+      
+        nav {
+            background-color: darkgreen;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+            font-size: 18px;
+        }
+
+
+        .cart-container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #ccc;
+        }
+
+        .cart-title {
+            text-align: center;
+            color: green;
+            margin-bottom: 25px;
+        }
+
+        .cart-product {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            background-color: #f1fff1;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+
+        .cart-product img {
+            width: 100px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .cart-product h3 {
+            color: green;
+            margin: 5px 0;
+        }
+
+        .cart-product p {
+            margin: 5px 0;
+            color: #333;
+        }
+
+        .empty-cart {
+            text-align: center;
+            color: #555;
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+   <div class="header-content">
+
+        <img src="logo2.png" class="logo">
+        <div class="brand">
+        <h1>🥕<span> Fresh Vegetable Store</span> 🥦</h1>
+    <p>Fresh Vegetables at Best Prices</p>
+   </div>
+</div>
+
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="vegetable1.html">Vegetables</a>
+    <a href="abouth.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">🛒 My Cart</a>
+</nav>
+
+<div class="cart-container">
+
+    <h2 class="cart-title">🛒 My Cart</h2>
+
+    <div id="cartItems"></div>
+
+</div>
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+let cartItems = document.getElementById("cartItems");
+
+if (cart.length === 0) {
+
+    cartItems.innerHTML =
+        '<div class="empty-cart">Your cart is empty.</div>';
+
+} else {
+
+    cartItems.innerHTML = "";
+
+    cart.forEach(function(item) {
+
+        cartItems.innerHTML += `
+            <div class="cart-product">
+
+                <img src="${item.image}">
+
+                <div>
+                    <h3>${item.name}</h3>
+                    <p>Price: ₹${item.price} / kg</p>
+                </div>
+
+            </div>
+        `;
+
+    });
+}
+
+</script>
+
+</body>
+</html>

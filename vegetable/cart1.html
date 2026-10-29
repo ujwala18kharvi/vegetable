@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>My Cart</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-color: #f4fff0;
+        }
+
+        header {
+            background-color: green;
+            color: white;
+            padding: 30px;
+        }
+       .brand{
+           margin:0;
+           padding:0;
+           text-align:left;
+          }
+         .brand h1{
+            margin:0;
+            font-size:28px;
+            line-height:1.1;
+            white-space:nowrap;
+        }
+         .brand h1 span{
+           color:#fff176;
+           }
+         .brand p{
+           font-size:15px;
+           margin:4px 0 0;
+           text-align:left;
+           padding-left:80px;
+           width:100%;
+          }
+
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-left: 30px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+             
+         }
+
+        header p {
+            text-align: left;
+            padding-left: 180px;
+        }
+
+        nav {
+            background-color: darkgreen;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+            font-size: 18px;
+        }
+
+        .cart-box {
+            width: 700px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 15px gray;
+        }
+
+        .cart-box h2 {
+            color: green;
+            text-align: center;
+        }
+
+        .cart-item {
+            padding: 15px;
+            border-bottom: 1px solid #ccc;
+            font-size: 18px;
+        }
+
+        .cart-total {
+            color: red;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: right;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-content">
+
+        <img src="logo2.png" class="logo">
+        <div class="brand">
+        <h1>🥕<span> Fresh Vegetable Store</span> 🥦</h1>
+    <p>Fresh Vegetables at Best Prices</p>
+   </div>
+</div>
+
+</header>
+
+
+<nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="vegetable1.html">Vegetables</a>
+
+    <a href="about.html">About Us</a>
+
+    <a href="contact.html">Contact</a>
+
+    <a href="cart.html">🛒 My Cart</a>
+
+</nav>
+
+
+<div class="cart-box">
+
+    <h2>🛒 My Cart</h2>
+
+    <div id="cartItems"></div>
+
+     
+    </div>
+
+    <p class="cart-total">
+
+        Total: ₹<span id="cartTotal">0</span>
+
+    </p>
+
+</div>
+
+
+<script>
+
+let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+let cartItems = document.getElementById("cartItems");
+
+let total = 0;
+
+
+if (cart.length === 0) {
+
+    cartItems.innerHTML = "<p>Your cart is empty.</p>";
+
+}
+
+else {
+
+    cartItems.innerHTML = "";
+
+    cart.forEach(function(item) {
+
+        let itemTotal = item.price * item.quantity;
+
+        total = total + itemTotal;
+
+        cartItems.innerHTML +=
+            "<div class='cart-item'>" +
+            "<b>" + item.name + "</b>" +
+            " × " + item.quantity +
+            " = ₹" + itemTotal +
+            "</div>";
+
+    });
+
+}
+
+
+document.getElementById("cartTotal").innerText = total;
+
+</script>
+localStorage.removeItem("cart");
+<script>
+function showCart() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let cartItems = document.getElementById("cartItems");
+
+    if (cart.length === 0) {
+        cartItems.innerHTML = "<p>Your cart is empty</p>";
+        return;
+    }
+
+    cartItems.innerHTML = "";
+
+    cart.forEach(function(item) {
+        cartItems.innerHTML += `
+            <div class="cart-product">
+                <img src="${item.image}">
+                <div>
+                    <h3>${item.name}</h3>
+                    <p>₹${item.price} / kg</p>
+                </div>
+            </div>
+        `;
+    });
+}
+
+showCart();
+</script>
+
+
+</body>
+
+</html>

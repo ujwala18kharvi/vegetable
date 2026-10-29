@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Radish Details</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-color: #f4fff0;
+        }
+
+        header {
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+.brand{
+           margin:0;
+           padding:0;
+           text-align:left;
+          }
+         .brand h1{
+            margin:0;
+            font-size:28px;
+            line-height:1.1;
+            white-space:nowrap;
+        }
+         .brand h1 span{
+           color:#fff176;
+           }
+         .brand p{
+           font-size:15px;
+           margin:4px 0 0;
+           text-align:left;
+           padding-left:80px;
+           width:100%;
+          }
+
+        nav {
+            background-color: darkgreen;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+            font-size: 18px;
+        }
+
+        .product-box {
+            width: 850px;
+            margin: 50px auto;
+            padding: 35px;
+            background-color: white;
+            display: flex;
+            gap: 50px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px gray;
+        }
+
+        .product-image {
+            width: 400px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .product-info {
+            padding: 10px;
+        }
+
+        .product-info h2 {
+            color: green;
+            font-size: 32px;
+        }
+
+        .rating {
+            color: orange;
+            font-size: 22px;
+        }
+
+        .price {
+            color: red;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .quantity {
+            width: 60px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .cart-button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 13px 25px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .buy-button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 13px 25px;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        .back {
+            display: block;
+            margin-top: 25px;
+            color: green;
+            text-decoration: none;
+        }
+
+        .product-image:hover {
+            transform: scale(1.08);
+            transition: 0.3s;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 15px;
+            padding-left: 30px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+        }
+
+        header p {
+            text-align: left;
+            padding-left: 180px;
+        }
+#cartMessage {
+    display: none;
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: green;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #aaa;
+    font-weight: bold;
+    text-align: center;
+    z-index: 9999;
+}
+
+#cartMessage button {
+    margin-top: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 7px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    </style>
+
+</head>
+
+<body>
+
+<<div id="cartMessage"></div>
+
+<header>
+
+    <div class="header-content">
+
+        <img src="logo2.png" class="logo">
+         <div class="brand">
+       <h1>🥕<span> Fresh Vegetable Store</span> 🥦</h1>
+    <p>Fresh Vegetables at Best Prices</p>
+  </nav>
+</nav>
+</header>
+<nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="vegetable1.html">Vegetables</a>
+
+    <a href="about.html">About Us</a>
+
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">🛒 My Cart</a>
+
+
+</nav>
+
+
+<div class="product-box">
+
+    <img src="radish.jpeg"
+         class="product-image">
+
+    <div class="product-info">
+
+        <h2>Fresh Radish</h2>
+
+        <div class="rating">
+            ★★★★★
+        </div>
+
+        <p>
+            Fresh and crunchy radish suitable for
+            cooking, salads and different dishes.
+        </p>
+
+        <p>
+            Radish is a fresh and nutritious vegetable
+            commonly used in everyday cooking.
+        </p>
+
+        <p class="price">
+            ₹40 / kg
+        </p>
+
+        <p>
+            <b>Availability:</b> In Stock
+        </p>
+
+        <p>
+            <b>Select Quantity:</b>
+        </p>
+
+      <input type="number" class="quantity" id="quantity" value="1" min="1">
+        <br><br>
+
+       
+        <button class="cart-button"
+onclick="addToCart('Radish',40,'radish.jpeg')">
+Add to Cart
+</button>
+
+ <button type="button" class="buy-button" onclick="buyNow('Radish',40,'radish.jpeg')">Buy Now</button>
+           <a href="vegetable1.html" class="back">
+            ← Back to Vegetables
+        </a>
+
+    </div>
+
+
+</div>
+<script>
+function buyNow(name, price, image) {
+    let quantity = document.getElementById("quantity").value;
+
+    window.location.href =
+        "buy.html?name=" + encodeURIComponent(name) +
+        "&price=" + price +
+        "&image=" + encodeURIComponent(image) +
+        "&quantity=" + quantity;
+}
+</script>
+<script>
+function addToCart(name, price, image) {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let alreadyAdded = cart.some(function(item) {
+        return item.name === name;
+    });
+
+    let message = document.getElementById("cartMessage");
+
+    if (alreadyAdded) {
+        message.innerHTML =
+            name + " is already in your cart!" +
+            "<br><button onclick=\"closeCartMessage()\">OK</button>";
+
+        message.style.display = "block";
+        return;
+    }
+
+    cart.push({
+        name: name,
+        price: price,
+        image: image
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    message.innerHTML =
+        name + " added to cart!" +
+        "<br><button onclick=\"closeCartMessage()\">OK</button>";
+
+    message.style.display = "block";
+}
+
+function closeCartMessage() {
+    document.getElementById("cartMessage").style.display = "none";
+}
+</script>
+
+</body>
+
+</html>
