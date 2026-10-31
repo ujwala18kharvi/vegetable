@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buy Now - Fresh Vegetable Store</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background-color: #f5fff5;
+        }
+
+        header {
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+.brand{
+           margin:0;
+           padding:0;
+           text-align:left;
+          }
+         .brand h1{
+            margin:0;
+            font-size:28px;
+            line-height:1.1;
+            white-space:nowrap;
+        }
+         .brand h1 span{
+           color:#fff176;
+           }
+         .brand p{
+           font-size:15px;
+           margin:4px 0 0;
+           text-align:left;
+           padding-left:80px;
+           width:100%;
+          }
+
+       .logo {
+    width: 80px;
+    height: 80px;
+}
+        nav {
+            background-color: darkgreen;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+        }
+
+        .buy-box {
+            width: 500px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px #bbb;
+        }
+
+        .product {
+            text-align: center;
+        }
+
+        .product img {
+            width: 180px;
+            height: 150px;
+            object-fit: contain;
+        }
+
+        .product h2 {
+            color: green;
+        }
+
+        .price {
+            color: red;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            box-sizing: border-box;
+        }
+
+        .place-order {
+            width: 100%;
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #successMessage {
+            display: none;
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #e8ffe8;
+            color: green;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px #aaa;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        #successMessage span {
+            font-size: 25px;
+            margin-right: 8px;
+        }
+.quantity-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.quantity-box {
+    width: 60px !important;
+    padding: 8px;
+    text-align: center;
+    margin-left: 8px;
+}
+
+.price {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 15px;
+}
+
+header .logo {
+    order: -1;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.brand {
+    text-align: left;
+}
+
+.brand h1 {
+    margin: 0;
+}
+
+.brand p {
+    margin: 4px 0 0 0;
+    padding-left: 0;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+header .logo {
+    width: 80px !important;
+    height: 80px !important;
+    object-fit: contain;
+    margin: 0 15px 0 0 !important;
+}
+
+.brand {
+    text-align: left;
+}
+
+.brand h1 {
+    margin: 0 !important;
+}
+
+.brand p {
+    margin: 5px 0 0 0 !important;
+    padding: 0 !important;
+}.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.header-content .logo {
+    width: 80px !important;
+    height: 80px !important;
+    object-fit: contain;
+    margin: 0 15px 0 0 !important;
+}
+
+.title-area {
+    text-align: left;
+}
+
+.title-area h1 {
+    margin: 0;
+}
+
+.title-area p {
+    margin: 5px 0 0 0;
+    padding: 0;
+    text-align:left;
+    margin-left:60px;
+}
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-content">
+
+        <img src="logo2.png" class="logo">
+
+        <div class="title-area">
+            <h1>🥕<span>Fresh Vegetable Store<span>🥦</h1>
+            <p>Fresh Vegetables at Best Prices</p>
+        </div>
+
+    </div>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="vegetable1.html">Vegetables</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">🛒 My Cart</a>
+
+
+</nav>
+
+<div class="buy-box">
+
+    <div class="product">
+        <img id="productImage">
+
+        <h2 id="productName"></h2>
+
+     <div class="quantity-price">
+
+    <div>
+        <label>Quantity:</label>
+        <input type="number" id="buyQuantity" value="1" min="1"
+               oninput="changeQuantity()" class="quantity-box">
+    </div>
+
+    <p class="price" id="totalPrice"></p>
+
+</div>
+    </div>
+
+    <label>Full Name:</label>
+    <input type="text" id="customerName" placeholder="Enter your name">
+
+    <label>Address:</label>
+    <input type="text" id="address" placeholder="Enter your address">
+
+    <label>Phone Number:</label>
+    <input type="text" id="phone" placeholder="Enter phone number">
+
+    <label>Payment Method:</label>
+
+    <select id="payment">
+        <option value="">Select Payment Method</option>
+        <option value="Cash on Delivery">Cash on Delivery</option>
+        <option value="UPI">UPI</option>
+    </select>
+
+    <button class="place-order" onclick="placeOrder()">
+        Place Order
+    </button>
+
+</div>
+
+<div id="successMessage">
+    <span>✓</span>
+    Order placed successfully!
+</div>
+
+<script>
+
+let params = new URLSearchParams(window.location.search);
+
+let name = params.get("name");
+let price = Number(params.get("price"));
+let image = params.get("image");
+let quantity = Number(params.get("quantity"));
+
+if (!quantity || quantity < 1) {
+    quantity = 1;
+}
+
+document.getElementById("productName").innerHTML = name;
+document.getElementById("productImage").src = image;
+
+document.getElementById("buyQuantity").value = quantity;
+
+
+/* CHANGE QUANTITY FUNCTION */
+function changeQuantity() {
+
+    let newQuantity =
+        Number(document.getElementById("buyQuantity").value);
+
+    if (newQuantity < 1) {
+        newQuantity = 1;
+        document.getElementById("buyQuantity").value = 1;
+    }
+
+    document.getElementById("totalPrice").innerHTML =
+        "Total Price: ₹" + (price * newQuantity);
+}
+
+
+/* SHOW PRICE WHEN PAGE FIRST OPENS */
+changeQuantity();
+function placeOrder() {
+
+    let customerName =
+        document.getElementById("customerName").value.trim();
+
+    let address =
+        document.getElementById("address").value.trim();
+
+    let phone =
+        document.getElementById("phone").value.trim();
+
+    let payment =
+        document.getElementById("payment").value;
+
+    let message =
+        document.getElementById("successMessage");
+
+    if (customerName === "" ||
+        address === "" ||
+        phone === "" ||
+        payment === "") {
+
+        message.innerHTML =
+            "⚠ Please fill all the details first!";
+
+        message.style.color = "red";
+        message.style.display = "block";
+
+        return;
+    }
+
+    message.innerHTML =
+        "<span>✓</span> Order placed successfully!";
+
+    message.style.color = "green";
+    message.style.display = "block";
+}
+
+</script>
+
+
+
+</body>
+</html>
