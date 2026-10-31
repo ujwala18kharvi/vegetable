@@ -3,6 +3,8 @@
 <head>
     <title>Fresh Vegetable Store</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
 
         * {
@@ -15,51 +17,51 @@
             background-color: #f4fff0;
         }
 
+        /* Header */
         header {
             background-color: green;
             color: white;
             text-align: center;
             padding: 30px;
         }
-         .brand{
-           margin:0;
-           padding:0;
-           text-align:left;
-          }
-         .brand h1{
-            margin:0;
-            font-size:28px;
-            line-height:1.1;
-            white-space:nowrap;
-        }
-         .brand h1 span{
-           color:#fff176;
-           }
-         .brand p{
-           font-size:15px;
-           margin:4px 0 0;
-           text-align:left;
-           padding-left:80px;
-           width:100%;
-          }
-        .header-content {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 15px;
-    padding-left:60px;
-   
-}
- header p {
-    text-align: left;
-    padding-left:230px;
-}
 
+        .brand {
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-size: 28px;
+            line-height: 1.1;
+            white-space: nowrap;
+        }
+
+        .brand h1 span {
+            color: #fff176;
+        }
+
+        .brand p {
+            font-size: 15px;
+            margin: 4px 0 0;
+            text-align: left;
+            padding-left: 80px;
+            width: 100%;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 15px;
+            padding-left: 60px;
+        }
 
         .logo {
             width: 80px;
             height: 80px;
-            
+            object-fit: contain;
         }
 
         header h1 {
@@ -67,19 +69,21 @@
             font-size: 30px;
         }
 
-        
-
         /* Navigation */
         nav {
             background-color: darkgreen;
             padding: 15px;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 20px;
+            margin: 10px;
             font-size: 18px;
         }
 
@@ -164,23 +168,158 @@
             padding: 15px;
         }
 
+        /* Tablet Responsive */
+        @media screen and (max-width: 768px) {
+
+            header {
+                padding: 20px 10px;
+            }
+
+            .header-content {
+                padding-left: 0;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .logo {
+                width: 65px;
+                height: 65px;
+            }
+
+            .brand h1 {
+                font-size: 22px;
+                white-space: normal;
+            }
+
+            .brand p {
+                padding-left: 0;
+                font-size: 13px;
+                text-align: center;
+            }
+
+            nav {
+                padding: 10px;
+                gap: 5px;
+            }
+
+            nav a {
+                margin: 5px;
+                font-size: 16px;
+            }
+
+            .home-banner {
+                height: 400px;
+            }
+
+            .banner-content {
+                left: 10%;
+                top: 65%;
+            }
+
+        }
+
+        /* Mobile Responsive */
+        @media screen and (max-width: 480px) {
+
+            header {
+                padding: 18px 8px;
+            }
+
+            .header-content {
+                padding-left: 0;
+                gap: 8px;
+                justify-content: center;
+            }
+
+            .logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            .brand h1 {
+                font-size: 17px;
+                white-space: normal;
+            }
+
+            .brand p {
+                font-size: 11px;
+                padding-left: 0;
+                text-align: center;
+            }
+
+            nav {
+                padding: 10px 5px;
+                gap: 5px;
+            }
+
+            nav a {
+                font-size: 14px;
+                margin: 5px;
+            }
+
+            .home-banner {
+                height: 300px;
+            }
+
+            .home-banner img {
+                object-fit: cover;
+            }
+
+            .banner-content {
+                left: 50%;
+                top: 65%;
+                transform: translate(-50%, -50%);
+                width: 90%;
+            }
+
+            .banner-content h2 {
+                font-size: 25px;
+            }
+
+            .banner-content p {
+                font-size: 15px;
+            }
+
+            .shop-button {
+                padding: 10px 20px;
+                font-size: 15px;
+            }
+
+            .features {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            footer {
+                padding: 12px;
+                font-size: 14px;
+            }
+
+        }
+
     </style>
 </head>
 
 <body>
 
-  <header>
-<div class="header-content">
+<header>
+
+    <div class="header-content">
 
         <img src="logo2.png" class="logo">
+
         <div class="brand">
-        <h1>🥕<span> Fresh Vegetable Store</span> 🥦</h1>
-    <p>Fresh Vegetables at Best Prices</p>
-   </div>
-</div>
+
+            <h1>🥕<span> Fresh Vegetable Store</span> 🥦</h1>
+
+            <p>Fresh Vegetables at Best Prices</p>
+
+        </div>
+
+    </div>
 
 </header>
-
 
 <nav>
 
@@ -192,33 +331,29 @@
 
 </nav>
 
+<!-- Home Banner -->
 
-    <!-- Home Banner -->
-    <div class="home-banner">
+<div class="home-banner">
 
-        <img src="fresh.jpeg">
+    <img src="fresh.jpeg">
 
-        <div class="banner-content">
-            <a href="vegetable1.html" class="shop-button">
-                     Shop Now
-            </a>
-       
+    <div class="banner-content">
 
-        </div>
+        <a href="vegetable1.html" class="shop-button">
+            Shop Now
+        </a>
 
     </div>
 
+</div>
 
- 
-    </div>
+<!-- Footer -->
 
+<footer>
 
-    <!-- Footer -->
-    <footer>
+    <p>© 2026 Fresh Vegetable Store</p>
 
-        <p>© 2026 Fresh Vegetable Store</p>
-
-    </footer>
+</footer>
 
 </body>
 </html>
