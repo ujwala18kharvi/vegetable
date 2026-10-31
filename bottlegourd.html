@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Bottle Gourd Details</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-color: #f4fff0;
+        }
+
+        header {
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            background-color: darkgreen;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+            font-size: 18px;
+        }
+
+        .product-box {
+            width: 850px;
+            margin: 50px auto;
+            padding: 35px;
+            background-color: white;
+            display: flex;
+            gap: 50px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px gray;
+        }
+
+        .product-image {
+            width: 400px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .product-info {
+            padding: 10px;
+        }
+
+        .product-info h2 {
+            color: green;
+            font-size: 32px;
+        }
+
+        .rating {
+            color: orange;
+            font-size: 22px;
+        }
+
+        .price {
+            color: red;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .quantity {
+            width: 60px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .cart-button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 13px 25px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .buy-button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 13px 25px;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        .back {
+            display: block;
+            margin-top: 25px;
+            color: green;
+            text-decoration: none;
+        }
+
+        .product-image:hover {
+            transform: scale(1.08);
+            transition: 0.3s;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 15px;
+            padding-left: 30px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+        }
+
+        header p {
+            text-align: left;
+            padding-left: 180px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-content">
+
+        <img src="images/logo.png" class="logo">
+
+        <h1>🥕 Fresh Vegetable Store 🥦</h1>
+
+    </div>
+
+    <p>Fresh Vegetables at Best Prices</p>
+
+</header>
+
+<nav>
+
+    <a href="index.html">Home</a>
+    <a href="vegetables.html">Vegetables</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+
+</nav>
+
+<div class="product-box">
+
+    <img src="bottle.jpeg"
+         class="product-image">
+
+    <div class="product-info">
+
+        <h2>Fresh Bottle Gourd</h2>
+
+        <div class="rating">
+            ★★★★★
+        </div>
+
+        <p>
+            Fresh and tender bottle gourd suitable
+            for cooking and different dishes.
+        </p>
+
+        <p>
+            Bottle gourd is commonly used in
+            everyday cooking.
+        </p>
+
+        <p class="price">
+            ₹40 / kg
+        </p>
+
+        <p>
+            <b>Availability:</b> In Stock
+        </p>
+
+        <p>
+            <b>Select Quantity:</b>
+        </p>
+
+        <input type="number"
+               class="quantity"
+               value="1"
+               min="1">
+
+        <br><br>
+
+        <button class="cart-button">
+            Add to Cart
+        </button>
+
+        <button class="buy-button">
+            Buy Now
+        </button>
+
+        <a href="vegetables.html" class="back">
+            ← Back to Vegetables
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
