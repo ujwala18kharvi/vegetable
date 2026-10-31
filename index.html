@@ -13,6 +13,8 @@
 
         html, body {
             margin: 0;
+            padding: 0;
+            width: 100%;
             min-height: 100%;
         }
 
@@ -20,6 +22,7 @@
             font-family: Arial, sans-serif;
             background-color: #f4fff0;
             min-height: 100vh;
+            min-height: 100svh;
             display: flex;
             flex-direction: column;
         }
@@ -82,7 +85,7 @@
         /* MAIN CONTENT */
 
         main {
-            flex: 1;
+            flex: 1 0 auto;
             display: flex;
             flex-direction: column;
         }
@@ -92,12 +95,16 @@
         .home-banner {
             width: 100%;
             position: relative;
+            overflow: hidden;
         }
 
         .home-banner img {
-            width: 100%;
-            height: auto;
             display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
         }
 
         /* SHOP NOW BUTTON */
@@ -129,6 +136,8 @@
             padding: 30px 10px;
             font-size: 22px;
             margin-top: auto;
+            flex-shrink: 0;
+            width: 100%;
         }
 
         /* TABLET RESPONSIVE */
@@ -181,20 +190,24 @@
                 padding: 10px 8px;
             }
 
+            /* FULL IMAGE ON MOBILE */
+
             .home-banner {
                 width: 100%;
                 height: auto;
             }
 
             .home-banner img {
+                display: block;
                 width: 100%;
                 height: auto;
+                max-width: 100%;
                 object-fit: contain;
             }
 
             .shop-button {
-                font-size: 18px;
-                padding: 12px 25px;
+                font-size: 16px;
+                padding: 12px 22px;
             }
 
             footer {
